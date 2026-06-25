@@ -106,6 +106,7 @@
     jetbrains-toolbox
     nodejs_22
     claude-code
+    fastfetch
   ];
 
   fonts.packages = with pkgs; [

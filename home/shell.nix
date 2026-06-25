@@ -3,6 +3,9 @@
 {
   programs.bash = {
     enable = true;
+    initExtra = ''
+      fastfetch
+    '';
     shellAliases = {
       culcate = "systemctl suspend";
       rebuild = "cd ~/nixos-dotfiles && git add . && sudo nixos-rebuild switch --flake .#nixos";
