@@ -15,13 +15,13 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/nixos
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.users.zaha = import ./home.nix;
+            home-manager.users.zaha = import ./home;
           }
         ];
       };

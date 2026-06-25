@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware.nix ];
 
   # Bootloader
   boot.loader.timeout = 5;
@@ -10,7 +10,7 @@
   boot.loader.limine = {
     enable = true;
     style = {
-      wallpapers = [ ./images/wallpaper-limine-blur.jpg ];
+      wallpapers = [ ../../assets/wallpaper-limine-blur.jpg ];
       wallpaperStyle = "stretched";
       backdrop = "000000";
     };
@@ -91,9 +91,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    wget curl vim killall efibootmgr git
+    wget curl killall efibootmgr git
     vscode
-    alacritty
     discord google-chrome
     unzip zip p7zip unrar
     wl-clipboard
@@ -102,9 +101,9 @@
     kdePackages.sddm-kcm
     nerd-fonts.jetbrains-mono
     inter
-    mangohud      
+    mangohud
     protonup-qt
-    jetbrains-toolbox        
+    jetbrains-toolbox
     nodejs_22
     claude-code
   ];
@@ -125,14 +124,14 @@
   };
 
   environment.sessionVariables = {
-    NIXOS_OZONE_WL          = "1";
-    GBM_BACKEND             = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    NVD_BACKEND             = "direct";
+    NIXOS_OZONE_WL               = "1";
+    GBM_BACKEND                  = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME    = "nvidia";
+    NVD_BACKEND                  = "direct";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 
-    # Bluetooth
+  # Bluetooth
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
