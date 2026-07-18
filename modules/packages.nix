@@ -9,6 +9,12 @@
     discord google-chrome
     unzip zip p7zip unrar
     wl-clipboard
+    grim slurp
+    playerctl brightnessctl
+    pavucontrol
+    btop
+    blueman
+    swaynotificationcenter
     kdePackages.kcalc
     kdePackages.partitionmanager
     kdePackages.sddm-kcm
@@ -19,7 +25,6 @@
     jetbrains-toolbox
     nodejs_22
     claude-code
-    fastfetch
     python3
     uv
   ];

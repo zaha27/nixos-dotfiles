@@ -8,6 +8,7 @@
     ../modules/network.nix
     ../modules/locale.nix
     ../modules/desktop.nix
+    ../modules/hyprland.nix
     ../modules/audio.nix
     ../modules/users.nix
     ../modules/packages.nix
