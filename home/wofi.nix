@@ -26,7 +26,7 @@
         background-color: rgba(30, 30, 46, 0.95);
         border: 2px solid #89b4fa;
         border-radius: 12px;
-        font-family: "Inter", "JetBrainsMono Nerd Font";
+        font-family: "JetBrainsMono Nerd Font", monospace;
         font-size: 14px;
       }
 

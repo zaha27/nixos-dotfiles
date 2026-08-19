@@ -28,6 +28,7 @@ in
       workspace = [
         "1, monitor:DP-6, default:true"
         "2, monitor:DP-6"
+        "3, monitor:DP-6"
         "4, monitor:DP-6"
         "5, monitor:DP-6"
         "7, monitor:DP-5, default:true"
@@ -99,13 +100,16 @@ in
 
       animations = {
         enabled = true;
-        bezier = "smoothOut, 0.25, 0.1, 0.25, 1";
+        # Speeds are in deciseconds and accept fractions, so these are 30-60ms.
+        # snappy front-loads the motion: most of the distance is covered in the
+        # first few frames, which reads as instant without hard-cutting.
+        bezier = "snappy, 0.05, 0.9, 0.1, 1";
         animation = [
-          "windows, 1, 1, smoothOut"
-          "windowsOut, 1, 1, smoothOut"
-          "border, 1, 2, smoothOut"
-          "fade, 1, 1, smoothOut"
-          "workspaces, 1, 1, smoothOut"
+          "windows, 1, 0.4, snappy"
+          "windowsOut, 1, 0.3, snappy"
+          "border, 1, 0.6, snappy"
+          "fade, 1, 0.3, snappy"
+          "workspaces, 1, 0.4, snappy"
         ];
       };
 
@@ -149,22 +153,18 @@ in
         "$mod, 3, workspace, 3"
         "$mod, 4, workspace, 4"
         "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
         "$mod, 7, workspace, 7"
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
 
         "$mod SHIFT, 1, movetoworkspace, 1"
         "$mod SHIFT, 2, movetoworkspace, 2"
         "$mod SHIFT, 3, movetoworkspace, 3"
         "$mod SHIFT, 4, movetoworkspace, 4"
         "$mod SHIFT, 5, movetoworkspace, 5"
-        "$mod SHIFT, 6, movetoworkspace, 6"
         "$mod SHIFT, 7, movetoworkspace, 7"
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
-        "$mod SHIFT, 0, movetoworkspace, 10"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up,   workspace, e-1"

@@ -23,7 +23,7 @@
 
     style = ''
       * {
-        font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+        font-family: "JetBrainsMono Nerd Font", monospace;
         font-size: 13px;
       }
 
